@@ -18,10 +18,10 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
 
 const main = async () => {
   let { data, error } = await supabase
-    .from('countries')
+    .from('country')
     .select('name, continent')
-    .order('continent', {ascending: true})
-    .range(0,10)
+    .order('continent', { ascending: true })
+    .range(0, 10)
 
   if (error) {
     console.error(error)
